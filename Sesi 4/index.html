@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tugas mandiri</title>
+</head>
+<form>
+<p>Menghitung Luas dan Kelling Lingkaran</p>
+<input type="text" id="jarijari" name="jarijari">
+<input type="button" name="submit" value="Submit" onclick="hitung();" />
+</form>
+
+
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function hitung(){
+		const phi = 3.14
+		let jari =parseFloat(document.getElementById('jarijari').value);
+		let l=phi*jari*jari
+		let k=phi*jari*2
+		alert(`Luas =${l.toFixed(2)} dan Keliling = ${k.toFixed(2)}`)
+}
+
+</script>
