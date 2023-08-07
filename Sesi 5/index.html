@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <div>
+    <button id="tombol" onclick=ubahTombol()><span id="namatombol"></span></button>
+    </div>
+    <div>
+        <p>Nilai : <input type="text" value="0" id="nilai"></p>  
+    </div>
+    <div>
+        <button id="min" onclick=kurang()>-</button>
+        <button id="plus" onclick=tambah()>+</button>
+    </div>
+    <div>
+    <p>Tugas</p>
+    <div>
+        pesan : <input type="text" id="pesan">
+    </div>
+    <div>
+        Berapa kali : <input type="number" min="1" id="kali">
+    </div>
+    <div>
+        <button onclick=cetak()>Cetak!</button>
+    </div>
+    <span id="looping"></span>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('namatombol').innerHTML = "KLIK AKU"
+        let nilai = 0
+        document.getElementById('nilai').value = parseInt(nilai)
+
+}, false);
+    
+    function ubahTombol(){
+        if (document.getElementById('namatombol').innerHTML == "KLIK AKU") {
+            document.getElementById('namatombol').innerHTML = "HELLO YAL"
+        }else{
+            document.getElementById('namatombol').innerHTML = "KLIK AKU"
+        }
+    }
+    function tambah(){
+        nilai = parseInt(document.getElementById('nilai').value)
+        nilai+=1
+        document.getElementById('nilai').value = parseInt(nilai)
+    
+    }
+    function kurang(){
+        nilai = parseInt(document.getElementById('nilai').value)
+        nilai-=1
+        document.getElementById('nilai').value = parseInt(nilai)
+    }
+    function cetak(){
+
+        pesan = document.getElementById('pesan').value
+        if (pesan == '') {
+        document.getElementById('looping').innerHTML = "Tidak ada pesan"
+        }else{
+        kali = parseInt(document.getElementById('kali').value)
+        no = 0
+        html = ''
+        for (let index = 0; index < kali; index++) {
+            no ++
+            html += `<div>${no} . ${pesan}</div>`            
+        }
+        document.getElementById('looping').innerHTML = html
+        }
+    }
+</script>
+</html>
